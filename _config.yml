@@ -1,6 +1,6 @@
 title: Your awesome title
 author: Sichong Peng
-email: scpeng@ucdavis.edu
+email: speng@fastmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
   Greetings! I’m a graduate student at UC Davis. 
   My study focuses on completing functional annotation of the horse genome. 
@@ -12,7 +12,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 
 #domain: sichong.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 #url: https://sichong.github.io  # the base hostname and protocol for your site, e.g. http://example.com
-#baseurl: /
+baseurl: ""
 
 sass:
   sass_dir: _sass
