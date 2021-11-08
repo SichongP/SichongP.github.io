@@ -13,6 +13,7 @@ show_excerpts: true # set to true to show excerpts on the homepage
 #domain: sichong.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 #url: https://sichong.github.io  # the base hostname and protocol for your site, e.g. http://example.com
 baseurl: ""
+permalink: /:categories/:year/:month/:day/:title:output_ext
 
 sass:
   sass_dir: _sass
