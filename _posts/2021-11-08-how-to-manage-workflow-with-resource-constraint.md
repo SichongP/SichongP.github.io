@@ -3,6 +3,7 @@ title: 'How to Manage Workflow with Resource Constraint on HPC'
 author: Sichong Peng
 date: '2021-11-08'
 slug: "how-to-manage-workflow-with-resource-constraint"
+excerpt_separator: <!--more-->
 categories:
   - Workflow
 tags:
@@ -13,7 +14,7 @@ tags:
 > Note: This is an update to my previous post: [How to Run Snakemake pipeline on HPC]({% post_url 2019-10-17-how-to-run-snakemake-pipeline-on-hpc %}).
 
 In my [previous post]({% post_url 2019-10-17-how-to-run-snakemake-pipeline-on-hpc %}), I disucessed some tips on how to effectively manage workflow using Snakemake on an HPC system. However, I have recently noticed that Snakemake support for `--cluster-config` is offcially deprecated in favor of `--profile`. I spent most of today digging into this feature and now I'm happy to share with you my latest setup.
-
+<!--more-->
 # How does `--profile` differ from `--cluster-config`?
 In short, `--profile` is more universal and versatile. You can set different profiles for different environments: HPC, local machines, cloud computing, etc. 
 
