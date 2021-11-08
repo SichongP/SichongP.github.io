@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 categories:
   - Workflow
 tags:
-  - bioinformatics
+  - HPC
 ---
 
 For years I have been sticking with R and RStudio, primarily because RStudio's useful and user-friendly GUI design (and my own comfort with Tidyverse). Indeed, my biggest complain against Jupyter Notebook whenever somebody introduced it to me was its bare-bone functionality. Until I discovered [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/)!  

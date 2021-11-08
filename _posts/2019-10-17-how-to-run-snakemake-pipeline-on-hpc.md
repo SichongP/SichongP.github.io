@@ -7,7 +7,7 @@ slug: how-to-run-snakemake-pipeline-on-hpc
 categories:
   - Workflow
 tags:
-  - bioinformatics
+  - HPC
   - Workflow
 ---
 Snakemake is a handy workflow manager written in Python. It handles workflow based on predefined job dependencies. One of the great features of Snakemake is that it can manage a workflow on both a standalone computer, or a clustered HPC system. HPC, or "cluster" as it's often referred to, requires additional considerations. 
