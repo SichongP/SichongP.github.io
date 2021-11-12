@@ -2,7 +2,7 @@
 title: Handle Edge Cases on HPC with Snakemake
 author: Sichong Peng
 layout: post
-date: 
+date: '2021-11-12'
 slug: 2021-11-12-handle-edge-cases-on-hpc-with-snakemake
 categories:
   - Workflow
