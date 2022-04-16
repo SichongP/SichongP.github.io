@@ -267,6 +267,34 @@ rule BWA:
     shell:
      """
      bwa mem -t {resources.cpus} -o {output} /path/to/ref.fa {input}
+     """
 ```
+
+> ## Update (4-16-2021):
+> As of Snakemake version 5.15.0,  `resources` directive accepts string values (Thank you John Blischak for pointing this out to me. Check out his slurm profile [here](https://github.com/jdblischak/smk-simple-slurm)). Therefore, we can simply add partition to our `resources` directive instead of `params` directive like so:
+>```{yaml}
+>jobs: 100
+>cluster: "sbatch -p {resources.partition} -t {resources.time_min} --mem={resources.mem_mb} -c {resources.cpus} -o logs_slurm/{rule}_{wildcards} -e logs_slurm/{rule}_{wildcards} --mail-type=FAIL --mail-user=user@mail.com"
+>default-resources: [cpus_high=0, mem_mb_high=0, time_min=60, cpus=1, mem_mb=2000, partition='low']
+>resources: [cpus_high=30, mem_mb_high=500000]
+>```
+>And in our `Snakefile`:
+>```
+>rule FastQC:
+>    input: "Data/{sample}.fastq.gz"
+>    output: "Results/QC/{sample}_fastqc.zip"
+>    shell:
+>     """
+>     fastqc -o Results/QC/ {input} 
+>     """  
+>rule BWA:
+>    input: "Data/{sample}.fastq.gz"
+>    output: "Results/mapping/{sample}.sam"
+>    resources: cpus=5, mem_mb=30000, time_min=1440, cpus_high=5, mem_mb_high=30000, partition = 'med'
+>    shell:
+>     """
+>     bwa mem -t {resources.cpus} -o {output} /path/to/ref.fa {input}
+>     """
+>```
 
 Alternatively, we can use a custom wrapper to submit our job scripts. [Here is an excellent example](https://github.com/Snakemake-Profiles/slurm) showcasing the potentials of Snakemake.
